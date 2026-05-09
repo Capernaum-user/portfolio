@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CodePonics Alert History</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/alert-history.css">
+</head>
+
+<body>
+
+    <div class="alert-overlay">
+        <div class="alert-modal">
+            <button class="alert-close" aria-label="닫기">✕</button>
+
+            <div class="alert-list">
+                <div class="alert-row alert-danger">
+                    <div class="left">
+                        <div class="icon danger-icon"><img class="icon-img" src="./assets/icon/alert_icon1.svg" alt="위험 아이콘"></div>
+                    </div>
+                    <div class="center">
+                        <div class="title"><strong>비상! 수온이 <span class="em">28.5°C▲</span>까지 상승했습니다.</strong></div>
+                        <div class="desc">냉각 시스템을 점검하세요!</div>
+                    </div>
+                    <div class="right">
+                        <div class="time">12:45</div>
+                        <div class="status">읽음</div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="alert-row alert-info">
+                    <div class="left">
+                        <div class="icon blue-icon"><img class="icon-img" src="./assets/icon/alert_icon2.svg" alt="용존산소 아이콘"></div>
+                    </div>
+                    <div class="center">
+                        <div class="title"><strong>용존산소량이 <span class="info-em">4.5 mg/L 이하▼</span>로 떨어졌습니다.</strong></div>
+                        <div class="desc">에어레이터를 즉시 가동하세요!</div>
+                    </div>
+                    <div class="right">
+                        <div class="time">11:00</div>
+                        <div class="status">읽음</div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="alert-row alert-info">
+                    <div class="left">
+                        <div class="icon blue-icon"><img class="icon-img" src="./assets/icon/alert_icon3.svg" alt="수질 아이콘"></div>
+                    </div>
+                    <div class="center">
+                        <div class="title"><strong>수질 산도가 <span class="info-em">5.5▼</span>로 낮아졌습니다.</strong></div>
+                        <div class="desc">중화 조치를 고려하세요.</div>
+                    </div>
+                    <div class="right">
+                        <div class="time">10:45</div>
+                        <div class="status">읽음</div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="alert-row alert-danger">
+                    <div class="left">
+                        <div class="icon danger-icon"><img class="icon-img" src="./assets/icon/alert_icon4.svg" alt="암모니아 아이콘"></div>
+                    </div>
+                    <div class="center">
+                        <div class="title"><strong>암모니아 농도가 <span class="em">0.5ppm▲</span>을 초과했습니다.</strong></div>
+                        <div class="desc">사료 공급을 일시 중단하고 물을 교체하세요.</div>
+                    </div>
+                    <div class="right">
+                        <div class="time">10:05</div>
+                        <div class="status">읽음</div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="alert-row alert-danger">
+                    <div class="left">
+                        <div class="icon danger-icon"><img class="icon-img" src="./assets/icon/alert_icon5.svg" alt="습도 아이콘"></div>
+                    </div>
+                    <div class="center">
+                        <div class="title"><strong>실내 습도가 <span class="em">90%▲</span>에 도달했습니다.</strong></div>
+                        <div class="desc">환풍기 가동을 권장합니다.</div>
+                    </div>
+                    <div class="right">
+                        <div class="time">09:30</div>
+                        <div class="status">읽음</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

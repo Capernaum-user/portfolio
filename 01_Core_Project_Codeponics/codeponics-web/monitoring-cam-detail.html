@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>상추 ZoneA CAM01 모니터링</title>
+  <link rel="stylesheet" href="css/monitoring-cam-detail.css" />
+  <link rel="stylesheet" href="css/alert-modal.css" />
+</head>
+
+<body class="alert-modal-fullscreen">
+  <div class="canvas">
+    <header class="topbar">
+      <a class="back" href="monitoring.html" aria-label="뒤로가기">
+        <img src="./assets/icon/back-arrow.svg" alt="" aria-hidden="true" />
+      </a>
+      <h1 class="headline">상추 ZoneA CAM01 모니터링</h1>
+      <a class="bell-link bell-link--topbar" href="alert-history.html" aria-label="알림 내역">
+        <img src="./assets/icon/bell_notif.svg" alt="" aria-hidden="true" class="bell-icon" />
+      </a>
+    </header>
+
+    <section class="banner" aria-label="AI 분석 배너">
+      <strong>AI 분석 결과</strong>
+      <span>상추의 잎 두께와 색상이 매우 우수합니다.</span><br />
+      <span>향어들이 만들어준 영양분을 상추가 남김없이 흡수하며 “폭풍 성장” 중입니다.</span>
+    </section>
+
+    <section class="grid" aria-label="카메라 상세 모니터링">
+      <div class="left">
+        <div class="metric" role="group" aria-label="온도">
+          <div class="metric__label">온도</div>
+          <div class="metric__value"><span class="num">22</span><span class="unit">°C</span></div>
+        </div>
+
+        <div class="metric-row">
+          <div class="metric metric--half" role="group" aria-label="습도">
+            <div class="metric__label">습도</div>
+            <div class="metric__value"><span class="num">80</span><span class="unit">%</span></div>
+          </div>
+
+          <div class="metric metric--half" role="group" aria-label="조도">
+            <div class="metric__label">조도</div>
+            <div class="metric__value"><span class="num">80</span><span class="unit">%</span></div>
+          </div>
+        </div>
+
+        <section class="panel panel--radar" aria-label="농장 건강 점수">
+          <div class="panel__title">농장<br />건강 점수</div>
+
+          <div class="radar" aria-hidden="true">
+            <svg viewBox="0 0 240 210" preserveAspectRatio="xMidYMid meet" class="radar__svg" role="img" aria-label="레이더 차트">
+              <g opacity="0.65" stroke="#39c8ff" stroke-width="1" fill="none">
+                <polygon points="120,12 212,65 192,172 48,172 28,65" />
+                <polygon points="120,40 186,79 171,154 69,154 54,79" />
+                <polygon points="120,68 160,92 149,136 91,136 80,92" />
+                <line x1="120" y1="12" x2="120" y2="172" />
+                <line x1="212" y1="65" x2="48" y2="172" />
+                <line x1="192" y1="172" x2="28" y2="65" />
+                <line x1="48" y1="172" x2="212" y2="65" />
+                <line x1="28" y1="65" x2="192" y2="172" />
+              </g>
+
+              <polygon class="radar__shape" points="120,36 176,88 154,151 90,142 64,82" />
+
+              <g fill="#9fe8ff" font-size="12" font-weight="700" opacity="0.9">
+                <text x="120" y="18" text-anchor="middle">수온</text>
+                <text x="214" y="62">산도</text>
+                <text x="206" y="182" text-anchor="middle">
+                  <tspan x="206" dy="0">전기</tspan>
+                  <tspan x="206" dy="14">전도도</tspan>
+                </text>
+                <text x="106" y="206">용존산소</text>
+                <text x="10" y="192">조도</text>
+                <text x="14" y="62">습도</text>
+              </g>
+            </svg>
+          </div>
+        </section>
+      </div>
+
+      <div class="center">
+        <section class="panel panel--media" aria-label="CAM01 영상">
+          <div class="rec" aria-label="녹화 중">
+            <span class="rec__dot" aria-hidden="true"></span>
+            <span class="rec__text">REC</span>
+          </div>
+
+          <div class="media">
+            <img src="./assets/images/monitoring_1.jpg" alt="상추 ZoneA CAM01" class="media__img" />
+
+            <div class="bbox" style="left: 10%; top: 26%; width: 13%; height: 16%;">
+              <span class="bbox__label">Butterhead lettuce</span>
+            </div>
+            <div class="bbox" style="left: 27%; top: 27%; width: 9%; height: 15%;">
+              <span class="bbox__label">Butterhead lettuce</span>
+            </div>
+            <div class="bbox" style="left: 40%; top: 24%; width: 15%; height: 19%;">
+              <span class="bbox__label">Butterhead lettuce</span>
+            </div>
+            <div class="bbox" style="left: 56%; top: 25%; width: 15%; height: 20%;">
+              <span class="bbox__label">Butterhead lettuce</span>
+            </div>
+            <div class="bbox" style="left: 73%; top: 27%; width: 9%; height: 16%;">
+              <span class="bbox__label">Butterhead lettuce</span>
+            </div>
+            <div class="bbox" style="left: 84%; top: 24%; width: 12%; height: 20%;">
+              <span class="bbox__label">Butterhead lettuce</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="right">
+        <div class="metric-grid">
+          <div class="metric metric--tight" role="group" aria-label="수질 산도">
+            <div class="metric__label">수질 산도</div>
+            <div class="metric__value"><span class="num">7.2</span><span class="unit">pH</span></div>
+          </div>
+          <div class="metric metric--tight" role="group" aria-label="전기전도도">
+            <div class="metric__label">전기전도도</div>
+            <div class="metric__value"><span class="num">1.8</span><span class="unit">EC</span></div>
+          </div>
+          <div class="metric metric--tight" role="group" aria-label="수온">
+            <div class="metric__label">수온</div>
+            <div class="metric__value"><span class="num">24.5</span><span class="unit">°C</span></div>
+          </div>
+          <div class="metric metric--tight" role="group" aria-label="용존산소">
+            <div class="metric__label">용존산소</div>
+            <div class="metric__value"><span class="num">7.0</span><span class="unit">mg/L</span></div>
+          </div>
+        </div>
+
+        <section class="panel" aria-label="작물 생육 지표 분석">
+          <div class="panel__title panel__title--single">작물 생육 지표 분석</div>
+
+          <div class="bars" aria-hidden="true">
+            <div class="bar" style="--v: 92">
+              <div class="bar__fill"></div>
+              <div class="bar__val">92</div>
+              <div class="bar__label">성장도</div>
+            </div>
+            <div class="bar" style="--v: 45">
+              <div class="bar__fill"></div>
+              <div class="bar__val">45</div>
+              <div class="bar__label">성장률</div>
+            </div>
+            <div class="bar" style="--v: 80">
+              <div class="bar__fill"></div>
+              <div class="bar__val">80</div>
+              <div class="bar__label">조도최적화</div>
+            </div>
+            <div class="bar" style="--v: 88">
+              <div class="bar__fill"></div>
+              <div class="bar__val">88</div>
+              <div class="bar__label">환경적응</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="panel panel--wide" aria-label="실시간 수중 생태 에너지 흐름">
+      <div class="wide-head">
+        <div class="panel__title panel__title--single">실시간 수중 생태 에너지 흐름</div>
+        <div class="legend" aria-hidden="true">
+          <span class="legend__item"><span class="swatch swatch--purple"></span>수온 (°C)</span>
+          <span class="legend__item"><span class="swatch swatch--red"></span>용존산소 (mg/L)</span>
+        </div>
+      </div>
+
+      <div class="line" aria-hidden="true">
+        <svg viewBox="0 0 1380 190" preserveAspectRatio="none" class="line__svg" role="img" aria-label="라인 차트">
+          <g opacity="0.35" stroke="#7bd8ff" stroke-width="1">
+            <line x1="0" y1="20" x2="1380" y2="20" />
+            <line x1="0" y1="60" x2="1380" y2="60" />
+            <line x1="0" y1="100" x2="1380" y2="100" />
+            <line x1="0" y1="140" x2="1380" y2="140" />
+            <line x1="0" y1="180" x2="1380" y2="180" />
+          </g>
+
+          <polyline class="line__temp" points="0,72 90,70 180,68 270,66 360,64 450,62 540,60 630,58 720,58 810,60 900,62 990,64 1080,66 1170,68 1260,70 1380,72" />
+          <polyline class="line__oxy" points="0,126 90,124 180,124 270,123 360,123 450,122 540,122 630,121 720,121 810,121 900,122 990,122 1080,123 1170,123 1260,124 1380,126" />
+
+          <g class="line__pts">
+            <circle cx="0" cy="72" r="4" />
+            <circle cx="180" cy="68" r="4" />
+            <circle cx="360" cy="64" r="4" />
+            <circle cx="540" cy="60" r="4" />
+            <circle cx="720" cy="58" r="4" />
+            <circle cx="900" cy="62" r="4" />
+            <circle cx="1080" cy="66" r="4" />
+            <circle cx="1260" cy="70" r="4" />
+            <circle cx="1380" cy="72" r="4" />
+          </g>
+
+          <g class="line__pts line__pts--red">
+            <circle cx="0" cy="126" r="4" />
+            <circle cx="180" cy="124" r="4" />
+            <circle cx="360" cy="123" r="4" />
+            <circle cx="540" cy="122" r="4" />
+            <circle cx="720" cy="121" r="4" />
+            <circle cx="900" cy="122" r="4" />
+            <circle cx="1080" cy="123" r="4" />
+            <circle cx="1260" cy="124" r="4" />
+            <circle cx="1380" cy="126" r="4" />
+          </g>
+
+          <g fill="#a7eaff" font-size="12" opacity="0.8">
+            <text x="0" y="188">08:45</text>
+            <text x="150" y="188">09:30</text>
+            <text x="300" y="188">10:15</text>
+            <text x="450" y="188">11:00</text>
+            <text x="600" y="188">11:45</text>
+            <text x="750" y="188">12:30</text>
+            <text x="900" y="188">13:15</text>
+            <text x="1050" y="188">14:00</text>
+            <text x="1200" y="188">14:45</text>
+            <text x="1320" y="188">15:30</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+  </div>
+  <script>
+    (() => {
+      const mapping = {
+        'zonea-cam01': { title: '🥬 상추 ZoneA CAM01', img: './assets/images/monitoring_1.jpg' },
+        'zoneb-cam01': { title: '🌱 바질 ZoneB CAM01', img: './assets/images/monitoring_2.jpg' },
+        'zonec-cam01': { title: '🌿 케일 ZoneC CAM01', img: './assets/images/monitoring_3.jpg' },
+        'zoned-cam01': { title: '🍅 토마토 ZoneD CAM01', img: './assets/images/monitoring_4.jpg' },
+        'zonee-cam01': { title: '🍓 딸기 ZoneE CAM01', img: './assets/images/monitoring_5.jpg' },
+        'zonef-cam01': { title: '🥒 오이 ZoneF CAM01', img: './assets/images/monitoring_6.jpg' },
+        'zoneg-cam01': { title: '🥬 루꼴라 ZoneG CAM01', img: './assets/images/monitoring_1.jpg' },
+        'zoneh-cam01': { title: '🥬 청경채 ZoneH CAM01', img: './assets/images/monitoring_2.jpg' },
+        'zonei-cam01': { title: '🌿 민트 ZoneI CAM01', img: './assets/images/monitoring_3.jpg' },
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const cam = params.get('cam');
+      const data = cam ? mapping[cam] : null;
+      if (!data) return;
+
+      const headline = document.querySelector('.headline');
+      if (headline) headline.textContent = data.title;
+
+      const image = document.querySelector('.panel--media .media__img');
+      if (image) {
+        image.src = data.img;
+        image.alt = data.title;
+      }
+
+      document.title = `${data.title} 모니터링`;
+    })();
+  </script>
+  <script src="js/alert-modal.js"></script>
+</body>
+
+</html>

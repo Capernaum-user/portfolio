@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CodePonics Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/alert-modal.css">
+</head>
+
+<body class="alert-modal-fullscreen">
+
+    <div class="canvas">
+        <nav class="sidebar">
+            <div class="simbol-row">
+                <img src="./assets/logo/simbol.svg" alt="symbol" class="symbol-img">
+                <img src="./assets/logo/logo.svg" alt="CodePonics 로고" class="logo-img">
+            </div>
+
+            <div class="profile">
+                <img src="./assets/images/profile.svg" alt="profile">
+                <div>
+                    <div class="profile-name">어부의텃밭</div>
+                </div>
+            </div>
+
+            <nav class="menu">
+                <a class="menu-item active" href="dashboard.html"><img src="./assets/icon/menu icon1_on.svg" alt="icon">대시보드</a>
+                <a class="menu-item" href="monitoring.html"><img src="./assets/icon/menu icon2_off.svg" alt="icon">모니터링</a>
+                <a class="menu-item" href="report-list.html"><img src="./assets/icon/menu icon3_off.svg" alt="icon">리포트</a>
+                <a class="menu-item" href="diary-list.html"><img src="./assets/icon/menu icon4_off.svg" alt="icon">성장 일지</a>
+                <a class="menu-item" href="#"><img src="./assets/icon/menu icon5_off.svg" alt="icon">시스템 설정</a>
+            </nav>
+
+            <a class="logout" href="index.html">로그아웃 →</a>
+        </nav>
+
+        <main class="main">
+            <div class="main-inner">
+                <div class="header">
+                    <h1>농장A 모니터링 시스템</h1>
+                    <div class="zone-select">
+                        <button class="zone" type="button" aria-haspopup="listbox" aria-expanded="false">ZoneA ▾</button>
+                        <div class="zone-dropdown" role="listbox" aria-label="Zone 선택">
+                            <button class="zone-option" type="button" role="option">ZoneA</button>
+                            <button class="zone-option" type="button" role="option">ZoneB</button>
+                            <button class="zone-option" type="button" role="option">ZoneC</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banner">모든 상추가 편차 5% 미만으로 매우 균일하게 자라고 있어요! AI 분석 결과 생육 곡선 유지 시 2월 9일 최상의 품질로 수확이 기대됩니다.
+                </div>
+
+                <div class="banner danger" style="display: none;">
+                    <div class="banner-text">
+                        상추들은 자리를 잘 잡았는데 수온이 28.5°C까지 올라 비상입니다! 어서 물 온도를 낮춰주세요! 🔥🥬
+                    </div>
+                </div>
+
+                <section class="section water">
+                    <h3 class="section-title">수질</h3>
+                    <div class="card-grid">
+                        <div class="card">
+                            <img class="card-icon" src="./assets/icon/card icon1.svg" alt="icon">
+                            <div class="status">정상</div>
+                            <div class="main-value txt-main">7.2 pH</div>
+                            <div class="sub">수질 산도</div>
+                        </div>
+                        <div class="card warning">
+                            <img class="card-icon" src="./assets/icon/card icon2.svg" alt="icon">
+                            <div class="status">주의</div>
+                            <div class="main-value txt-main">1.8 EC</div>
+                            <div class="sub">전기전도도</div>
+                        </div>
+                        <div class="card">
+                            <img class="card-icon" src="./assets/icon/card icon3.svg" alt="icon">
+                            <div class="status">정상</div>
+                            <div class="main-value txt-main">24.5 °C</div>
+                            <div class="sub">수온</div>
+                        </div>
+                        <div class="card danger"> <img class="card-icon" src="./assets/icon/card_icon_danger.svg"
+                                alt="icon" style="display: none;">
+                            <div class="status danger">위험</div>
+                            <div class="main-value txt-main">28 °C</div>
+                            <div class="sub">수온</div>
+                        </div>
+                        <div class="card">
+                            <img class="card-icon" src="./assets/icon/card icon4.svg" alt="icon">
+                            <div class="status">정상</div>
+                            <div class="main-value txt-main">7.0 mg/L</div>
+                            <div class="sub">용존산소</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section crop">
+                    <h3 class="section-title">작물</h3>
+                    <div class="card-grid">
+                        <div class="card">
+                            <img class="card-icon" src="./assets/icon/card icon3.svg" alt="icon">
+                            <div class="status">정상</div>
+                            <div class="main-value txt-main">22 °C</div>
+                            <div class="sub">온도</div>
+                        </div>
+                        <div class="card warning">
+                            <img class="card-icon" src="./assets/icon/card icon5.svg" alt="icon">
+                            <div class="status">주의</div>
+                            <div class="main-value txt-main">80%</div>
+                            <div class="sub">습도</div>
+                        </div>
+                        <div class="card">
+                            <img class="card-icon" src="./assets/icon/card icon6.svg" alt="icon">
+                            <div class="status">정상</div>
+                            <div class="main-value txt-main">80%</div>
+                            <div class="sub">조도</div>
+                        </div>
+                        <div class="card weather-card">
+                            <div class="weather-content">
+                                <img class="weather-icon" src="./assets/icon/weatherIcon.png" alt="날씨 아이콘">
+                                <div class="main-value">16°</div>
+                                <div class="weather-day">화요일</div>
+                            </div>
+                            <div class="weather-info">
+                                <span>강수 0%</span>
+                                <span>풍속 4m/s</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <aside class="right">
+    <div class="top-icons">
+        <div class="notif-box">
+            수온이 너무 높습니다! 확인해 주세요.
+        </div>
+        <img src="./assets/icon/bell_notif.svg" alt="notification" class="bell-icon active">
+    </div>
+
+    <div class="ai-brief">
+        <img class="brief-char" src="./assets/images/briefing_character.png" alt="ai-char">
+        <div class="message">
+            <div class="title">✨AI 브리핑</div>
+            <div class="desc">모든 센서 수치가 정상 범위 내에서 완벽하게 제어되고 있습니다.</div>
+        </div>
+    </div>
+
+    <div class="monitor">
+        <div class="monitor-header">
+            <span class="monitor-title">CAM1 실시간 모니터링</span>
+            <!-- <span class="live-indicator"><span class="dot"></span>LIVE</span> -->
+        </div>
+        <div class="cam-container">
+            <div class="monitor-carousel" aria-label="실시간 모니터링 캐러셀">
+                <div class="monitor-track">
+                    <div class="monitor-slide"><img src="./assets/images/cam1.png" alt="CAM1 화면"></div>
+                    <div class="monitor-slide"><img src="./assets/images/report_list1.png" alt="CAM2 화면"></div>
+                    <div class="monitor-slide"><img src="./assets/images/report_list2.png" alt="CAM3 화면"></div>
+                    <div class="monitor-slide"><img src="./assets/images/report_list3.png" alt="CAM4 화면"></div>
+                </div>
+                <button class="monitor-arrow prev" type="button" aria-label="이전 슬라이드">&#x2039;</button>
+                <button class="monitor-arrow next" type="button" aria-label="다음 슬라이드">&#x203A;</button>
+            </div>
+        </div>
+        <div class="monitor-label"></div>
+    </div>
+    </div>
+</aside>
+    </div>
+    <script>
+        const zoneSelect = document.querySelector('.zone-select');
+        const zoneButton = zoneSelect?.querySelector('.zone');
+        const zoneDropdown = zoneSelect?.querySelector('.zone-dropdown');
+
+        const dashboardData = {
+            ZoneA: {
+                farm: '농장A',
+                danger: false,
+                banner: '모든 상추가 편차 5% 미만으로 매우 균일하게 자라고 있어요! AI 분석 결과 생육 곡선 유지 시 2월 9일 최상의 품질로 수확이 기대됩니다.',
+                bannerDanger: '현재 ZoneA는 안정적으로 관리되고 있습니다.',
+                water: {
+                    ph: '7.2 pH',
+                    ec: '1.8 EC',
+                    tempNormal: '24.5 °C',
+                    tempDanger: '28 °C',
+                    do: '7.0 mg/L',
+                },
+                crop: {
+                    temp: '22 °C',
+                    hum: '80%',
+                    light: '80%',
+                },
+                aiBrief: {
+                    charSrc: './assets/images/briefing_character.png',
+                    title: '✨AI 브리핑',
+                    descHtml: '모든 센서 수치가 정상 범위 내에서 완벽하게 제어되고 있습니다.',
+                },
+            },
+            ZoneB: {
+                farm: '농장B',
+                danger: true,
+                banner: 'ZoneB는 환경 변화가 감지되어 관찰이 필요합니다.',
+                bannerDanger: 'ZoneB에서 수온이 28.5°C까지 올라 비상입니다! 어서 물 온도를 낮춰주세요! 🔥🥬',
+                water: {
+                    ph: '6.8 pH',
+                    ec: '2.2 EC',
+                    tempNormal: '27.5 °C',
+                    tempDanger: '28 °C',
+                    do: '5.2 mg/L',
+                },
+                crop: {
+                    temp: '27 °C',
+                    hum: '88%',
+                    light: '72%',
+                },
+                aiBrief: {
+                    charSrc: './assets/images/briefing_character_danger.png',
+                    title: '긴급 조치 체크리스트',
+                    descHtml: '✅ 냉각 팬 가동 확인 <br>\n✅ 환기창 100% 개방<br>\n✅ 조도 일시 낮춤',
+                },
+            },
+            ZoneC: {
+                farm: '농장C',
+                danger: false,
+                banner: 'ZoneC는 성장 리듬이 안정적입니다. 현재 페이스가 유지되면 계획된 수확 일정에 맞출 수 있어요.',
+                bannerDanger: '현재 ZoneC는 안정적으로 관리되고 있습니다.',
+                water: {
+                    ph: '7.0 pH',
+                    ec: '1.5 EC',
+                    tempNormal: '23.0 °C',
+                    tempDanger: '28 °C',
+                    do: '6.5 mg/L',
+                },
+                crop: {
+                    temp: '21 °C',
+                    hum: '70%',
+                    light: '85%',
+                },
+                aiBrief: {
+                    charSrc: './assets/images/briefing_character.png',
+                    title: '✨AI 브리핑',
+                    descHtml: '모든 센서 수치가 정상 범위 내에서 완벽하게 제어되고 있습니다.',
+                },
+            },
+        };
+
+        const setText = (el, text) => {
+            if (!el) return;
+            el.textContent = text;
+        };
+
+        const findCardBySub = (sectionEl, subText, { excludeDanger = false } = {}) => {
+            if (!sectionEl) return null;
+            const cards = Array.from(sectionEl.querySelectorAll('.card'));
+            return (
+                cards.find((card) => {
+                    if (excludeDanger && card.classList.contains('danger')) return false;
+                    const subEl = card.querySelector('.sub');
+                    return subEl && subEl.textContent.trim() === subText;
+                }) || null
+            );
+        };
+
+        const applyZone = (zoneName) => {
+            const zone = dashboardData[zoneName] ? zoneName : 'ZoneA';
+            const data = dashboardData[zone];
+
+            const headerTitle = document.querySelector('.header h1');
+            if (headerTitle) headerTitle.textContent = `${data.farm} 모니터링 시스템`;
+
+            const normalBanner = document.querySelector('.banner:not(.danger)');
+            const dangerBanner = document.querySelector('.banner.danger');
+            const dangerBannerText = dangerBanner?.querySelector('.banner-text');
+
+            if (normalBanner) setText(normalBanner, data.banner);
+            if (dangerBannerText) setText(dangerBannerText, data.bannerDanger);
+
+            if (data.danger) {
+                if (normalBanner) normalBanner.style.display = 'none';
+                if (dangerBanner) dangerBanner.style.display = 'flex';
+            } else {
+                if (normalBanner) normalBanner.style.display = 'flex';
+                if (dangerBanner) dangerBanner.style.display = 'none';
+            }
+
+            const waterSection = document.querySelector('.section.water');
+            const cropSection = document.querySelector('.section.crop');
+
+            const phCard = findCardBySub(waterSection, '수질 산도');
+            const ecCard = findCardBySub(waterSection, '전기전도도');
+            const doCard = findCardBySub(waterSection, '용존산소');
+            const tempNormalCard = findCardBySub(waterSection, '수온', { excludeDanger: true });
+            const tempDangerCard = waterSection?.querySelector('.card.danger');
+            const tempDangerIcon = tempDangerCard?.querySelector('img.card-icon');
+
+            setText(phCard?.querySelector('.main-value'), data.water.ph);
+            setText(ecCard?.querySelector('.main-value'), data.water.ec);
+            setText(doCard?.querySelector('.main-value'), data.water.do);
+
+            setText(tempNormalCard?.querySelector('.main-value'), data.water.tempNormal);
+            setText(tempDangerCard?.querySelector('.main-value'), data.water.tempDanger);
+
+            if (data.danger) {
+                if (tempNormalCard) tempNormalCard.style.display = 'none';
+                if (tempDangerCard) tempDangerCard.style.display = 'flex';
+                if (tempDangerIcon) tempDangerIcon.style.display = 'block';
+            } else {
+                if (tempNormalCard) tempNormalCard.style.removeProperty('display');
+                if (tempDangerCard) tempDangerCard.style.removeProperty('display');
+                if (tempDangerIcon) tempDangerIcon.style.display = 'none';
+            }
+
+            const cropTempCard = findCardBySub(cropSection, '온도');
+            const cropHumCard = findCardBySub(cropSection, '습도');
+            const cropLightCard = findCardBySub(cropSection, '조도');
+
+            setText(cropTempCard?.querySelector('.main-value'), data.crop.temp);
+            setText(cropHumCard?.querySelector('.main-value'), data.crop.hum);
+            setText(cropLightCard?.querySelector('.main-value'), data.crop.light);
+
+            const aiBrief = document.querySelector('.ai-brief');
+            const briefChar = aiBrief?.querySelector('.brief-char');
+            const briefTitle = aiBrief?.querySelector('.title');
+            const briefDesc = aiBrief?.querySelector('.desc');
+
+            if (briefChar && data.aiBrief?.charSrc) briefChar.setAttribute('src', data.aiBrief.charSrc);
+            if (briefTitle && data.aiBrief?.title) briefTitle.textContent = data.aiBrief.title;
+            if (briefDesc && typeof data.aiBrief?.descHtml === 'string') briefDesc.innerHTML = data.aiBrief.descHtml;
+
+            const rightNotifBox = document.querySelector('.right .notif-box');
+            const rightBellIcon = document.querySelector('.right .bell-icon');
+            if (data.danger) {
+                if (rightNotifBox) rightNotifBox.style.display = 'block';
+                if (rightBellIcon) rightBellIcon.classList.add('active');
+            } else {
+                if (rightNotifBox) rightNotifBox.style.display = 'none';
+                if (rightBellIcon) rightBellIcon.classList.remove('active');
+            }
+
+            if (zoneButton) zoneButton.textContent = `${zone} ▾`;
+        };
+
+        if (zoneSelect && zoneButton && zoneDropdown) {
+            zoneButton.addEventListener('click', () => {
+                const isOpen = zoneSelect.classList.toggle('open');
+                zoneButton.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            zoneDropdown.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target.classList.contains('zone-option')) {
+                    applyZone(target.textContent.trim());
+                    zoneSelect.classList.remove('open');
+                    zoneButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!zoneSelect.contains(event.target)) {
+                    zoneSelect.classList.remove('open');
+                    zoneButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            applyZone('ZoneA');
+        }
+
+        const monitorTrack = document.querySelector('.monitor-track');
+        const monitorSlides = document.querySelectorAll('.monitor-slide');
+        const monitorPrev = document.querySelector('.monitor-arrow.prev');
+        const monitorNext = document.querySelector('.monitor-arrow.next');
+        let monitorIndex = 0;
+
+        const updateMonitorSlide = () => {
+            if (!monitorTrack) return;
+            const offset = monitorIndex * 100;
+            monitorTrack.style.transform = `translateX(-${offset}%)`;
+        };
+
+        if (monitorPrev && monitorNext && monitorSlides.length > 0) {
+            monitorPrev.addEventListener('click', () => {
+                monitorIndex = (monitorIndex - 1 + monitorSlides.length) % monitorSlides.length;
+                updateMonitorSlide();
+            });
+
+            monitorNext.addEventListener('click', () => {
+                monitorIndex = (monitorIndex + 1) % monitorSlides.length;
+                updateMonitorSlide();
+            });
+        }
+    </script>
+    <script src="js/alert-modal.js"></script>
+</body>
+
+</html>

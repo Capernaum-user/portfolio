@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Monitoring - CodePonics</title>
+    <link rel="stylesheet" href="css/monitoring.css">
+    <link rel="stylesheet" href="css/alert-modal.css">
+</head>
+
+<body class="alert-modal-fullscreen">
+    <div class="canvas">
+        <nav class="sidebar" aria-label="사이드바">
+            <div class="simbol-row">
+                <img src="./assets/logo/simbol.svg" alt="symbol" class="symbol-img">
+                <img src="./assets/logo/logo.svg" alt="CodePonics 로고" class="logo-img">
+            </div>
+
+            <div class="profile">
+                <img src="./assets/images/profile.svg" alt="profile">
+                <div class="profile-name">어부의텃밭</div>
+            </div>
+
+            <nav class="menu" aria-label="메뉴">
+                <a class="menu-item" href="dashboard.html"><img src="./assets/icon/menu icon1_off.svg" alt="icon">대시보드</a>
+                <a class="menu-item active" href="monitoring.html"><img src="./assets/icon/menu icon2_on.svg" alt="icon">모니터링</a>
+                <a class="menu-item" href="report-list.html"><img src="./assets/icon/menu icon3_off.svg" alt="icon">리포트</a>
+                <a class="menu-item" href="diary-list.html"><img src="./assets/icon/menu icon4_off.svg" alt="icon">성장 일지</a>
+                <a class="menu-item" href="device-register.html"><img src="./assets/icon/menu icon5_off.svg" alt="icon">시스템 설정</a>
+            </nav>
+
+            <a class="logout" href="index.html">로그아웃 →</a>
+        </nav>
+
+        <main class="main" aria-label="콘텐츠">
+            <div class="main-inner">
+                <div class="top-icons" aria-label="알림">
+                    <div class="alert-pill" aria-label="위험 알림">
+                        <img src="./assets/icon/card_icon_danger.svg" alt="" class="alert-pill__icon" aria-hidden="true">
+                        <span class="alert-pill__text">ZoneB 수온주의!</span>
+                    </div>
+                    <a class="bell-link" href="alert-history.html" aria-label="알림 내역">
+                        <img src="./assets/icon/bell.svg" alt="알림" class="bell-icon">
+                    </a>
+                </div>
+
+                <header class="report-header">
+                    <h1 class="page-title">농장A 모니터링</h1>
+
+                    <div class="banner">
+                        AI 분석 결과 ZoneA의 상추의 잎 두께와 색상이 매우 우수합니다.<br />
+                        향어들이 만들어준 영양분을 상추가 남김없이 흡수하며 “폭풍 성장” 중입니다.
+                    </div>
+                </header>
+
+                <section class="camera-grid" aria-label="카메라 모니터링">
+                    <a class="camera-card" href="monitoring-cam-detail.html?cam=zonea-cam01" aria-label="상추 ZoneA CAM01 상세 보기">
+                        <div class="camera-card__top"><span class="dot" aria-hidden="true"></span><span class="camera-card__title">🥬 상추 ZoneA CAM01</span></div>
+                        <div class="camera-card__img"><img src="./assets/images/monitoring_1.jpg" alt="상추 ZoneA CAM01" /></div>
+                    </a>
+
+                    <a class="camera-card" href="monitoring-cam-detail.html?cam=zoneb-cam01" aria-label="바질 ZoneB CAM01 상세 보기">
+                        <div class="camera-card__top"><span class="dot" aria-hidden="true"></span><span class="camera-card__title">🌱 바질 ZoneB CAM01</span></div>
+                        <div class="camera-card__img"><img src="./assets/images/monitoring_2.jpg" alt="바질 ZoneB CAM01" /></div>
+                    </a>
+
+                    <a class="camera-card" href="monitoring-cam-detail.html?cam=zonec-cam01" aria-label="케일 ZoneC CAM01 상세 보기">
+                        <div class="camera-card__top"><span class="dot" aria-hidden="true"></span><span class="camera-card__title">🌿 케일 ZoneC CAM01</span></div>
+                        <div class="camera-card__img"><img src="./assets/images/monitoring_3.jpg" alt="케일 ZoneC CAM01" /></div>
+                    </a>
+
+                    <a class="camera-card" href="monitoring-cam-detail.html?cam=zoned-cam01" aria-label="토마토 ZoneD CAM01 상세 보기">
+                        <div class="camera-card__top"><span class="dot" aria-hidden="true"></span><span class="camera-card__title">🍅 토마토 ZoneD CAM01</span></div>
+                        <div class="camera-card__img"><img src="./assets/images/monitoring_4.jpg" alt="토마토 ZoneD CAM01" /></div>
+                    </a>
+
+                    <a class="camera-card" href="monitoring-cam-detail.html?cam=zonee-cam01" aria-label="딸기 ZoneE CAM01 상세 보기">
+                        <div class="camera-card__top"><span class="dot" aria-hidden="true"></span><span class="camera-card__title">🍓 딸기 ZoneE CAM01</span></div>
+                        <div class="camera-card__img"><img src="./assets/images/monitoring_5.jpg" alt="딸기 ZoneE CAM01" /></div>
+                    </a>
+
+                    <a class="camera-card" href="monitoring-cam-detail.html?cam=zonef-cam01" aria-label="오이 ZoneF CAM01 상세 보기">
+                        <div class="camera-card__top"><span class="dot" aria-hidden="true"></span><span class="camera-card__title">🥒 오이 ZoneF CAM01</span></div>
+                        <div class="camera-card__img"><img src="./assets/images/monitoring_6.jpg" alt="오이 ZoneF CAM01" /></div>
+                    </a>
+
+                    <a class="camera-card" href="monitoring-cam-detail.html?cam=zoneg-cam01" aria-label="루꼴라 ZoneG CAM01 상세 보기">
+                        <div class="camera-card__top"><span class="dot" aria-hidden="true"></span><span class="camera-card__title">🥬 루꼴라 ZoneG CAM01</span></div>
+                        <div class="camera-card__img"><img src="./assets/images/monitoring_1.jpg" alt="루꼴라 ZoneG CAM01" /></div>
+                    </a>
+
+                    <a class="camera-card" href="monitoring-cam-detail.html?cam=zoneh-cam01" aria-label="청경채 ZoneH CAM01 상세 보기">
+                        <div class="camera-card__top"><span class="dot" aria-hidden="true"></span><span class="camera-card__title">🥬 청경채 ZoneH CAM01</span></div>
+                        <div class="camera-card__img"><img src="./assets/images/monitoring_2.jpg" alt="청경채 ZoneH CAM01" /></div>
+                    </a>
+
+                    <a class="camera-card" href="monitoring-cam-detail.html?cam=zonei-cam01" aria-label="민트 ZoneI CAM01 상세 보기">
+                        <div class="camera-card__top"><span class="dot" aria-hidden="true"></span><span class="camera-card__title">🌿 민트 ZoneI CAM01</span></div>
+                        <div class="camera-card__img"><img src="./assets/images/monitoring_3.jpg" alt="민트 ZoneI CAM01" /></div>
+                    </a>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+<script src="js/alert-modal.js"></script>
+
+</html>

@@ -1,0 +1,481 @@
+﻿@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+:root {
+    --primary: #1C80F9;
+    --danger: #FB2C36;
+    --warning: #FF6900;
+    --bg: linear-gradient(180deg, #080808 0%, #1C82FD 100%); /* 그라데이션 수정 */
+    --surface: #ffffff;
+    --text-primary: #000000;
+    --card-radius: 20px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+body {
+    font-family: 'Pretendard';
+    background: #061A33; 
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 레이아웃 설정 */
+.canvas {
+    width: 1500px;
+    height: 940px;
+    display: grid;
+    grid-template-columns: 238px 1fr 340px; 
+    gap: 20px;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    width: 238px;
+    padding: 25px 18px 10px 18px; /* 첫 번째 값인 상단 패딩을 키웁니다 */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(180deg, #080808 0%, #1C82FD 100%);
+    height: 100%;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.simbol-row { display: flex; align-items: center; gap: 10px; margin-top: 15px; margin-bottom: 12px; }
+.symbol-img { width: 50px; height: auto; }
+.logo-img { width: 130px; height: auto; object-fit: contain; }
+.profile { display: flex; align-items: center; gap: 12px; background: #fff; padding: 10px; border-radius: 14px; }
+.profile img { width: 48px; height: 48px; border-radius: 10px; }
+.profile-name {
+    font-weight: 800;
+    font-size: 22px;   /* 기존보다 시원하게 키운 크기 */
+    color: #000;       /* 글자색 검정 유지 */
+    line-height: 1.2;  /* 박스 내 세로 정렬이 어색하면 조절 */
+}
+.menu { margin-top: 18px; display: flex; flex-direction: column; gap: 18px; }
+.menu-item { color: #fff; font-weight: 600; font-size: 22px; display: flex; align-items: center; gap: 10px; padding: 6px 4px; text-decoration: none; }
+.menu-item.active { color: #00D8FF; }
+.logout {
+    margin-top: auto;        /* 사이드바 가장 아래로 밀기 */
+    margin-bottom: 30px;     /* 바닥에서 30px만큼 띄우기 (수치 조절 가능) */
+    
+    color: #cfe7ff;
+    font-size: 22px;
+    opacity: 0.8;
+    cursor: pointer;
+    
+    /* 중앙 정렬을 위한 설정 */
+    display: block;          /* 너비 전체 사용 */
+    text-align: center;      /* 텍스트 중앙 정렬 */
+    width: 100%;             /* 부모 너비에 맞춤 */
+    text-decoration: none;
+    
+    transition: opacity 0.3s;
+}
+
+/* 마우스 올렸을 때 효과 추가 (선택사항) */
+.logout:hover {
+    opacity: 1;
+    color: #fff;
+}
+/* 메인 콘텐츠 스타일 */
+.main { display: flex; flex-direction: column; padding: 24px 12px; gap: 18px; }
+.header { display: flex; align-items: center; gap: 12px; }
+.header h1 { color: #fff; font-size: 28px; font-weight: 800; }
+.zone-select { position: relative; display: inline-flex; }
+.zone {
+    border: 3px solid #35A9FF;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 22px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.zone-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 140px;
+    background: #0B2547;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    padding: 6px;
+    display: none;
+    z-index: 20;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.zone-select.open .zone-dropdown { display: grid; gap: 4px; }
+
+.zone-option {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.zone-option:hover {
+    background: rgba(53, 169, 255, 0.25);
+}
+
+/* 배너 및 위험 배너 */
+.banner {
+    width: 856px;
+    height: 110px;
+    padding: 20px 30px;
+    background: linear-gradient(90deg, #3DBBC9 0%, #0E00D9 100%);
+    border: 3px solid #A9EDFF;
+    border-radius: 18px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5; /* 1.4 ~ 1.6 사이가 가독성이장 좋습니다 */
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner.danger {
+    background:
+        url('../assets/images/danger_pattern_bg.png') center / cover no-repeat,
+        linear-gradient(90deg, #FF0000 0%, #4B0E0E 100%);
+    border: 3px solid #FF0000;
+    padding-right: 130px;
+}
+
+.banner-text { width: 100%; z-index: 2; line-height: 1.4; font-weight: 700; }
+
+/* 카드 시스템 스타일 */
+.section-title { color: #cfe7ff; font-weight: 700; margin: 15px 0 12px 6px; }
+.card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+
+.card {
+    width: 190px;
+    height: 190px;
+    background: var(--surface);
+    border-radius: var(--card-radius);
+    padding: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* 🚨 위험 상태 카드 전용 */
+.card.danger {
+    background-color: #ffffff !important; 
+    display: none; /* 평상시 숨김 */
+    border: 3px solid #FB2C36 !important;
+}
+
+.card.danger .status.danger {
+    background-color: #FB2C36 !important;
+    color: #ffffff !important;
+    position: absolute; 
+    top: 20px; 
+    right: 14px; 
+    padding: 6px 10px; 
+    border-radius: 10px; 
+    font-weight: 700;
+}
+
+.card.danger .main-value { color: #D90000 !important; }
+.card.danger .sub { color: #444 !important; }
+
+/* 일반 상태 텍스트 */
+.card-icon { position: absolute; top: 14px; left: 14px; width: 50px; }
+.card .status { position: absolute; top: 20px; right: 14px; background: #e9f6ff; color: var(--primary); padding: 6px 10px; border-radius: 10px; font-weight: 700; }
+.card .status.danger { background: var(--danger); color: #ffffff; }
+.card.warning .status { background: #FFF7A9; color: var(--warning); }
+.card.temp-danger { border: 3px solid var(--danger); }
+.card.temp-danger .main-value { color: #D90000; }
+.card .main-value { font-size: 34px; font-weight: 800; color: #000; line-height: 1.5; }
+.card .sub { font-size: 16px; font-weight: 600; color: #444; }
+
+/* 날씨 카드 */
+.weather-content { margin-top: -20px; display: flex; flex-direction: column; align-items: center; }
+.card.weather-card {
+    background-image: url('../assets/images/EnvironmentCard.jpg');
+    background-size: cover;
+    border: 3px solid #A9EDFF;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #ffffff;
+    z-index: 1;
+}
+.card.weather-card::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.15); z-index: -1;
+}
+.weather-card .main-value { font-size: 44px !important; color: #fff; margin-top: -20px;}
+.weather-day { font-size: 20px; font-weight: 700; color: #fff; margin: -5px 0 5px 0; }
+.weather-info { position: absolute; bottom: 10px; width: 100%; display: flex; justify-content: space-around; font-weight: 700; }
+
+/* --- 🔔 알림 시스템 스타일 추가 --- */
+.right { width: 340px; padding: 35px; display: flex; flex-direction: column; gap: 18px; position: relative; }
+
+.top-icons {
+    position: absolute;
+    top: 40px;
+    right: 35px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notif-box {
+    background: #FB2C36;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    position: relative;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.notif-box::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 8px solid #FB2C36;
+}
+
+.bell-icon.active {
+    width: 28px;
+    transform-origin: top center;
+    animation: ring 1.5s infinite;
+}
+
+@keyframes ring {
+    0% { transform: rotate(0); }
+    10% { transform: rotate(15deg); }
+    20% { transform: rotate(-15deg); }
+    30% { transform: rotate(10deg); }
+    40% { transform: rotate(-10deg); }
+    50% { transform: rotate(0); }
+    100% { transform: rotate(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* AI 브리핑 및 모니터링 */
+.ai-brief {
+    margin-top: 62px;
+    height: 397px;
+    background: linear-gradient(180deg, #000 0%, #029BE7 100%);
+    border: 3px solid #A9EDFF !important;
+    border-radius: 20px;
+    position: relative;
+    padding: 30px;
+}
+.ai-brief .title { font-size: 26px; font-weight: 800; color: #02F689; margin-bottom: 10px; }
+.ai-brief .desc { font-size: 22px; font-weight: 600; color: #02F689; line-height: 1.5; }
+.brief-char {
+    position: absolute;
+    /* 박스의 정확한 중앙에 위치시키기 */
+    top: 75%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /* 중심점을 이미지 정중앙으로 보정 */
+    
+    width: 240px; /* 박스 크기에 맞게 너비 조정 */
+    height: auto;
+    z-index: 1;
+    
+    /* floating 애니메이션 적용: 3초 동안 부드럽게 무한 반복 */
+    animation: floating 1s ease-in-out infinite;
+}
+
+/* 3. 둥둥 떠 있는 효과 정의 */
+@keyframes floating {
+    0%, 100% {
+        /* 중앙 위치에서 시작 */
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        /* 중앙에서 위로 15px 이동 */
+        transform: translate(-50%, -65%);
+    }
+}
+/* (선택 사항) 마우스를 올렸을 때 더 빨리 뛰게 하고 싶다면 */
+.brief-char:hover {
+    animation-duration: 0.5s;
+}
+
+
+.monitor {
+    background: linear-gradient(180deg, #000 0%, #029BE7 100%);
+    border: 3px solid #A9EDFF;
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.monitor-header { display: flex; justify-content: space-between; color: #fff; font-weight: 800; }
+.live-indicator { color: var(--danger); display: flex; align-items: center; gap: 6px; }
+.dot { width: 8px; height: 8px; background: var(--danger); border-radius: 50%; animation: blink 1.5s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.cam-container { height: 200px; border-radius: 12px; overflow: hidden; }
+.cam-container img { width: 100%; height: 100%; object-fit: cover; }
+
+.monitor-carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+.monitor-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.4s ease;
+}
+
+.monitor-slide {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+}
+
+.monitor-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.monitor-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.85);
+    color: #111827;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.monitor-arrow.prev { left: 10px; }
+.monitor-arrow.next { right: 10px; }
+
+.monitor-label {
+    margin-top: 10px;
+    color: #cfe7ff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.txt-main { font-size: 28px; font-weight: 800; }
+
+/* 알림 히스토리 스타일 */
+.alert-list { display: flex; flex-direction: column; gap: 15px; }
+.alert-item {
+    background: var(--surface);
+    border-radius: var(--card-radius);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.alert-item.danger { border-left: 5px solid var(--danger); }
+.alert-item.warning { border-left: 5px solid var(--warning); }
+.alert-item.normal { border-left: 5px solid #4CAF50; }
+.alert-icon { font-size: 30px; }
+.alert-content { flex: 1; }
+.alert-title { font-size: 20px; font-weight: 700; color: #000; margin-bottom: 5px; }
+.alert-desc { font-size: 16px; color: #666; margin-bottom: 5px; }
+.alert-time { font-size: 14px; color: #999; }
+
+/* 팝업 스타일 */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup {
+    background: var(--surface);
+    border-radius: var(--card-radius);
+    width: 90%;
+    max-width: 500px;
+    max-height: 70%;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: popupFadeIn 0.3s ease-out;
+}
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    background: #f5f5f5;
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+.popup-header h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+}
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+.close-btn:hover {
+    color: #000;
+}
+.popup-body {
+    padding: 20px;
+}
+@keyframes popupFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
