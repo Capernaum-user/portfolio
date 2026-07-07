@@ -88,7 +88,7 @@ flowchart TB
 
 ## 🛠 Skills & Competencies
 
-- **AI Engineering**: 멀티에이전트 오케스트레이션(Claude·Gemini·Codex), RAG/벡터DB, 프롬프트·하네스 엔지니어링, TTS·이미지 생성 파이프라인
+- **AI Engineering**: 멀티에이전트 오케스트레이션(Claude·Gemini·Codex), **GraphRAG(Graphify)**·RAG/벡터DB, 프롬프트·하네스 엔지니어링, TTS·이미지 생성 파이프라인
 - **Backend/Data**: Python, Node.js, REST API, Database Design (ERD), IoT Data Handling
 - **Frontend**: HTML5, CSS3, JavaScript, React(Vite)
 - **Edge/IoT**: Jetson, Raspberry Pi, 센서 연동, PyQt5
